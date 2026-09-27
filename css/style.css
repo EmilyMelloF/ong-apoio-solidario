@@ -1,0 +1,180 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  margin: 0;
+  background: #f5f8fa;
+  color: #25343a;
+  font-family: Arial, sans-serif;
+  line-height: 1.5;
+}
+
+.container {
+  width: min(100% - 2rem, 900px);
+  margin: 0 auto;
+}
+
+header {
+  background: #145f83;
+  color: #fff;
+}
+
+.cabecalho {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.75rem 0;
+}
+
+.marca img {
+  display: block;
+  max-width: 100%;
+}
+
+nav {
+  display: flex;
+  gap: 0.5rem;
+}
+
+nav a {
+  padding: 0.5rem 0.75rem;
+  border-radius: 4px;
+  color: #fff;
+  text-decoration: none;
+}
+
+nav a:hover,
+nav a[aria-current="page"] {
+  background: #0b4967;
+}
+
+main {
+  flex: 1;
+  padding: 2rem 0 3rem;
+}
+
+h1 {
+  margin-top: 0;
+  color: #164d68;
+}
+
+h2 {
+  color: #164d68;
+  font-size: 1.3rem;
+}
+
+a {
+  color: #07547e;
+}
+
+a:focus-visible,
+input:focus-visible,
+select:focus-visible,
+button:focus-visible {
+  outline: 3px solid #e4a028;
+  outline-offset: 3px;
+}
+
+.foto {
+  display: block;
+  width: 100%;
+  max-width: 700px;
+  height: auto;
+  margin: 1.5rem 0;
+  border-radius: 4px;
+}
+
+.cartao {
+  margin: 1rem 0;
+  padding: 1rem 1.25rem;
+  background: #fff;
+  border: 1px solid #d4e0e6;
+  border-radius: 5px;
+}
+
+.cartao h2 {
+  margin-top: 0;
+}
+
+form {
+  max-width: 750px;
+}
+
+fieldset {
+  margin: 1.5rem 0;
+  padding: 1rem;
+  border: 1px solid #a9c2cf;
+  border-radius: 5px;
+}
+
+legend {
+  padding: 0 0.4rem;
+  color: #164d68;
+  font-weight: bold;
+}
+
+.campos {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+label {
+  display: block;
+  margin-bottom: 0.3rem;
+}
+
+input,
+select {
+  width: 100%;
+  padding: 0.65rem;
+  border: 1px solid #718b98;
+  border-radius: 4px;
+  background: #fff;
+  color: #25343a;
+  font: inherit;
+}
+
+button {
+  padding: 0.7rem 1.2rem;
+  border: 0;
+  border-radius: 4px;
+  background: #145f83;
+  color: #fff;
+  font: inherit;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #0b4967;
+}
+
+footer {
+  padding: 1rem 0;
+  background: #e4eef3;
+  font-size: 0.9rem;
+}
+
+footer p {
+  margin: 0.3rem 0;
+}
+
+@media (max-width: 600px) {
+  .cabecalho {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  nav {
+    flex-wrap: wrap;
+  }
+
+  .campos {
+    grid-template-columns: 1fr;
+  }
+}

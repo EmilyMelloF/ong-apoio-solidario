@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="190" height="48" viewBox="0 0 190 48" role="img" aria-labelledby="titulo">
+  <title id="titulo">Apoio Solidário</title>
+  <path d="M22 39 6 24C-2 16 7 4 17 10l5 4 5-4c10-6 19 6 11 14Z" fill="#fff"/>
+  <text x="48" y="21" fill="#fff" font-family="Arial, sans-serif" font-size="15" font-weight="bold">Apoio</text>
+  <text x="48" y="39" fill="#fff" font-family="Arial, sans-serif" font-size="15" font-weight="bold">Solidário</text>
+</svg>
