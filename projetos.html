@@ -5,37 +5,56 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Projetos | ONG Apoio Solidário</title>
   <link rel="stylesheet" href="css/style.css">
+  <script src="js/script.js" defer></script>
 </head>
 <body>
   <header>
     <div class="container cabecalho">
       <a class="marca" href="index.html"><img src="images/logo.svg" alt="Apoio Solidário" width="190" height="48"></a>
-      <nav aria-label="Navegação principal">
-        <a href="index.html">Início</a>
-        <a href="projetos.html" aria-current="page">Projetos</a>
-        <a href="cadastro.html">Cadastro</a>
+      <button class="nav-toggle" type="button" aria-controls="menu-principal" aria-expanded="false" aria-label="Abrir menu"><span aria-hidden="true">☰</span> Menu</button>
+      <nav id="menu-principal" aria-label="Navegação principal">
+        <ul class="menu">
+          <li><a href="index.html">Início</a></li>
+          <li class="tem-submenu">
+            <a href="projetos.html" aria-current="page">Projetos</a>
+            <ul class="submenu" aria-label="Seções de projetos">
+              <li><a href="projetos.html#frentes">Frentes de atuação</a></li>
+              <li><a href="projetos.html#doacoes">Campanhas de doação</a></li>
+              <li><a href="projetos.html#voluntariado">Voluntariado</a></li>
+            </ul>
+          </li>
+          <li><a href="cadastro.html">Cadastro</a></li>
+        </ul>
       </nav>
     </div>
   </header>
 
   <main class="container">
     <h1>Projetos Sociais</h1>
-    <section class="cartao">
-      <h2>Apresentação das Frentes de Atuação</h2>
-      <p>As ações propostas pela ONG envolvem apoio a famílias e atividades que aproximam as pessoas da comunidade. A ideia é reunir quem deseja ajudar e identificar necessidades locais.</p>
-    </section>
-    <section class="cartao">
-      <h2>Campanhas de Doação</h2>
-      <p>As campanhas podem arrecadar alimentos e roupas em bom estado para famílias que precisam de apoio. A organização das doações busca facilitar a entrega dos itens.</p>
-    </section>
-    <section class="cartao">
-      <h2>Atividades de Voluntariado</h2>
-      <p>Voluntários podem participar da separação de doações e de ações comunitárias. Cada pessoa pode contribuir com seu tempo e suas habilidades.</p>
-    </section>
+    <div class="grid projetos-grid">
+      <section id="frentes" class="cartao">
+        <span class="badge">Comunidade</span>
+        <h2>Apresentação das Frentes de Atuação</h2>
+        <p>As ações propostas pela ONG envolvem apoio a famílias e atividades que aproximam as pessoas da comunidade. A ideia é reunir quem deseja ajudar e identificar necessidades locais.</p>
+        <div class="cartao-acoes"><a href="cadastro.html">Quero ajudar nesta frente</a></div>
+      </section>
+      <section id="doacoes" class="cartao">
+        <span class="badge">Doações</span>
+        <h2>Campanhas de Doação</h2>
+        <p>As campanhas podem arrecadar alimentos e roupas em bom estado para famílias que precisam de apoio. A organização das doações busca facilitar a entrega dos itens.</p>
+        <div class="cartao-acoes"><a href="cadastro.html">Quero ajudar nas doações</a></div>
+      </section>
+      <section id="voluntariado" class="cartao">
+        <span class="badge">Voluntariado</span>
+        <h2>Atividades de Voluntariado</h2>
+        <p>Voluntários podem participar da separação de doações e de ações comunitárias. Cada pessoa pode contribuir com seu tempo e suas habilidades.</p>
+        <div class="cartao-acoes"><a href="cadastro.html">Quero ser voluntário</a></div>
+      </section>
+    </div>
   </main>
 
   <footer>
-    <div class="container">
+    <div class="container rodape-conteudo">
       <p>ONG Apoio Solidário — projeto acadêmico fictício</p>
       <p>E-mail: <a href="mailto:contato@apoiosolidario.org">contato@apoiosolidario.org</a> | Telefone: <a href="tel:+5551999999999">(51) 99999-9999</a></p>
     </div>

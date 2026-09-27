@@ -11,10 +11,20 @@
   <header>
     <div class="container cabecalho">
       <a class="marca" href="index.html"><img src="images/logo.svg" alt="Apoio Solidário" width="190" height="48"></a>
-      <nav aria-label="Navegação principal">
-        <a href="index.html">Início</a>
-        <a href="projetos.html">Projetos</a>
-        <a href="cadastro.html" aria-current="page">Cadastro</a>
+      <button class="nav-toggle" type="button" aria-controls="menu-principal" aria-expanded="false" aria-label="Abrir menu"><span aria-hidden="true">☰</span> Menu</button>
+      <nav id="menu-principal" aria-label="Navegação principal">
+        <ul class="menu">
+          <li><a href="index.html">Início</a></li>
+          <li class="tem-submenu">
+            <a href="projetos.html">Projetos</a>
+            <ul class="submenu" aria-label="Seções de projetos">
+              <li><a href="projetos.html#frentes">Frentes de atuação</a></li>
+              <li><a href="projetos.html#doacoes">Campanhas de doação</a></li>
+              <li><a href="projetos.html#voluntariado">Voluntariado</a></li>
+            </ul>
+          </li>
+          <li><a href="cadastro.html" aria-current="page">Cadastro</a></li>
+        </ul>
       </nav>
     </div>
   </header>
@@ -22,6 +32,7 @@
   <main class="container">
     <h1>Cadastro de Voluntário</h1>
     <p>Preencha os campos abaixo para simular um cadastro. Os dados não são enviados.</p>
+    <div id="mensagem-formulario" class="alerta" role="status" aria-live="polite" hidden></div>
     <form id="cadastro">
       <fieldset>
         <legend>Dados pessoais</legend>
@@ -77,10 +88,11 @@
       </fieldset>
       <button type="submit">Enviar cadastro</button>
     </form>
+    <div id="toast" class="toast" role="status" aria-live="polite"></div>
   </main>
 
   <footer>
-    <div class="container">
+    <div class="container rodape-conteudo">
       <p>ONG Apoio Solidário — projeto acadêmico fictício</p>
       <p>E-mail: <a href="mailto:contato@apoiosolidario.org">contato@apoiosolidario.org</a> | Telefone: <a href="tel:+5551999999999">(51) 99999-9999</a></p>
     </div>

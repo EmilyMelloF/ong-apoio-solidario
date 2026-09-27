@@ -5,15 +5,26 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Início | ONG Apoio Solidário</title>
   <link rel="stylesheet" href="css/style.css">
+  <script src="js/script.js" defer></script>
 </head>
 <body>
   <header>
     <div class="container cabecalho">
       <a class="marca" href="index.html"><img src="images/logo.svg" alt="Apoio Solidário" width="190" height="48"></a>
-      <nav aria-label="Navegação principal">
-        <a href="index.html" aria-current="page">Início</a>
-        <a href="projetos.html">Projetos</a>
-        <a href="cadastro.html">Cadastro</a>
+      <button class="nav-toggle" type="button" aria-controls="menu-principal" aria-expanded="false" aria-label="Abrir menu"><span aria-hidden="true">☰</span> Menu</button>
+      <nav id="menu-principal" aria-label="Navegação principal">
+        <ul class="menu">
+          <li><a href="index.html" aria-current="page">Início</a></li>
+          <li class="tem-submenu">
+            <a href="projetos.html">Projetos</a>
+            <ul class="submenu" aria-label="Seções de projetos">
+              <li><a href="projetos.html#frentes">Frentes de atuação</a></li>
+              <li><a href="projetos.html#doacoes">Campanhas de doação</a></li>
+              <li><a href="projetos.html#voluntariado">Voluntariado</a></li>
+            </ul>
+          </li>
+          <li><a href="cadastro.html">Cadastro</a></li>
+        </ul>
       </nav>
     </div>
   </header>
@@ -33,7 +44,7 @@
   </main>
 
   <footer>
-    <div class="container">
+    <div class="container rodape-conteudo">
       <p>ONG Apoio Solidário — projeto acadêmico fictício</p>
       <p>E-mail: <a href="mailto:contato@apoiosolidario.org">contato@apoiosolidario.org</a> | Telefone: <a href="tel:+5551999999999">(51) 99999-9999</a></p>
     </div>
