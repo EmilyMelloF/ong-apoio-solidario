@@ -16,7 +16,7 @@ export function iniciarRoteador(aoRenderizar) {
   const app = document.querySelector("#app");
   let secaoPendente = null;
 
-  function renderizar() {
+  function renderizar(moverFoco = false) {
     let rota = window.location.hash.replace(/^#\//, "");
 
     if (!Object.hasOwn(templates, rota)) {
@@ -26,6 +26,7 @@ export function iniciarRoteador(aoRenderizar) {
 
     app.innerHTML = templates[rota]();
     document.title = `${titulos[rota]} | ONG Apoio Solidário`;
+    document.querySelector("#anuncio-rota").textContent = `Página ${titulos[rota]}`;
 
     document.querySelectorAll(".menu > li > a[data-route]").forEach((link) => {
       if (link.dataset.route === rota) {
@@ -36,6 +37,8 @@ export function iniciarRoteador(aoRenderizar) {
     });
 
     aoRenderizar(rota);
+
+    if (moverFoco) app.focus({ preventScroll: true });
 
     if (rota === "projetos" && secaoPendente) {
       document.getElementById(secaoPendente)?.scrollIntoView();
@@ -64,6 +67,6 @@ export function iniciarRoteador(aoRenderizar) {
     }
   });
 
-  window.addEventListener("hashchange", renderizar);
+  window.addEventListener("hashchange", () => renderizar(true));
   renderizar();
 }
