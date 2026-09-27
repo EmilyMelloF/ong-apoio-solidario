@@ -22,6 +22,11 @@ const projetos = [
   }
 ];
 
+const fotoWebp = new URL("../imagens/voluntariado.webp", import.meta.url).href;
+const fotoJpg = new URL("../imagens/voluntariado.jpg", import.meta.url).href;
+const fotoWebp700 = new URL("../imagens/voluntariado-700.webp", import.meta.url).href;
+const fotoJpg700 = new URL("../imagens/voluntariado-700.jpg", import.meta.url).href;
+
 function templateCartao(projeto) {
   return `
     <section id="${projeto.id}" class="cartao">
@@ -41,8 +46,8 @@ export function templateInicio() {
       <p>A ONG Apoio Solidário é uma organização fictícia criada para demonstrar um projeto acadêmico de desenvolvimento Front-End. Seu objetivo é incentivar ações solidárias, campanhas de doação e participação voluntária na comunidade.</p>
       <p>O trabalho voluntário é uma forma de colaborar com outras pessoas e ajudar a construir uma comunidade mais acolhedora.</p>
       <picture>
-        <source srcset="../imagens/voluntariado.webp" type="image/webp">
-        <img class="foto" src="../imagens/voluntariado.jpg" alt="Participantes de uma ação de limpeza comunitária com um carrinho de mão" width="1200" height="800">
+        <source srcset="${fotoWebp700} 700w, ${fotoWebp} 1200w" sizes="(max-width: 700px) 100vw, 700px" type="image/webp">
+        <img class="foto" src="${fotoJpg}" srcset="${fotoJpg700} 700w, ${fotoJpg} 1200w" sizes="(max-width: 700px) 100vw, 700px" alt="Participantes de uma ação de limpeza comunitária com um carrinho de mão" width="1200" height="800">
       </picture>
       <p><a href="#/projetos" data-route="projetos">Conheça nossos projetos sociais</a></p>
     </section>
