@@ -62,7 +62,7 @@ export function templateCadastro() {
   return `
     <h1>Cadastro de Voluntário</h1>
     <p>Preencha os campos abaixo para simular um cadastro. Os dados não são enviados.</p>
-    <div id="mensagem-formulario" class="alerta" role="status" aria-live="polite" hidden></div>
+    <div id="mensagem-formulario" class="alerta" role="status" hidden></div>
     <form id="cadastro">
       <fieldset>
         <legend>Dados pessoais</legend>

@@ -10,10 +10,14 @@
   <script type="module" src="../js/main.js"></script>
 </head>
 <body>
+  <a class="pular-conteudo" href="#app">Pular para o conteúdo</a>
   <header>
     <div class="container cabecalho">
       <a class="marca" href="#/inicio" data-route="inicio"><img src="../imagens/logo.svg" alt="Apoio Solidário" width="190" height="48"></a>
-      <button class="nav-toggle" type="button" aria-controls="menu-principal" aria-expanded="false" aria-label="Abrir menu"><span aria-hidden="true">☰</span> Menu</button>
+      <div class="controles">
+        <button class="modo-contraste" type="button" aria-pressed="false">Alto contraste</button>
+        <button class="nav-toggle" type="button" aria-controls="menu-principal" aria-expanded="false" aria-label="Abrir menu"><span aria-hidden="true">☰</span> Menu</button>
+      </div>
       <nav id="menu-principal" aria-label="Navegação principal">
         <ul class="menu">
           <li><a href="#/inicio" data-route="inicio" aria-current="page">Início</a></li>
@@ -31,7 +35,8 @@
     </div>
   </header>
 
-  <main id="app" class="container"></main>
+  <p id="anuncio-rota" class="sr-only" role="status"></p>
+  <main id="app" class="container" tabindex="-1"></main>
 
   <footer>
     <div class="container rodape-conteudo">

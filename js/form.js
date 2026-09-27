@@ -30,6 +30,36 @@ function atualizarAparencia(campo) {
   campo.classList.toggle("campo-invalido", campo.value !== "" && !campo.validity.valid);
 }
 
+function mensagemDeErro(campo) {
+  if (campo.validity.valueMissing) return "Preencha este campo.";
+  if (campo.validity.typeMismatch) return "Digite um e-mail válido.";
+  if (campo.validity.tooShort) return `Digite pelo menos ${campo.minLength} caracteres.`;
+  if (campo.validity.patternMismatch) return campo.title;
+  return "Confira o valor informado.";
+}
+
+function atualizarErro(campo) {
+  const idErro = `${campo.id}-erro`;
+  let erro = document.getElementById(idErro);
+
+  if (campo.validity.valid) {
+    erro?.remove();
+    campo.removeAttribute("aria-invalid");
+    campo.removeAttribute("aria-describedby");
+    return;
+  }
+
+  if (!erro) {
+    erro = document.createElement("small");
+    erro.id = idErro;
+    erro.className = "erro-campo";
+    campo.insertAdjacentElement("afterend", erro);
+  }
+  erro.textContent = mensagemDeErro(campo);
+  campo.setAttribute("aria-invalid", "true");
+  campo.setAttribute("aria-describedby", idErro);
+}
+
 export function iniciarFormulario() {
   const formulario = document.querySelector("#cadastro");
   const mensagem = document.querySelector("#mensagem-formulario");
@@ -62,6 +92,9 @@ export function iniciarFormulario() {
     if (campo.name === "cep") campo.value = mascaraCep(campo.value);
 
     atualizarAparencia(campo);
+    if (campo.hasAttribute("aria-invalid") || formulario.classList.contains("tentou-enviar")) {
+      atualizarErro(campo);
+    }
     salvarCampos();
   }
 
@@ -71,6 +104,7 @@ export function iniciarFormulario() {
   formulario.addEventListener("invalid", (evento) => {
     formulario.classList.add("tentou-enviar");
     atualizarAparencia(evento.target);
+    atualizarErro(evento.target);
     mensagem.hidden = false;
     mensagem.className = "alerta alerta-erro";
     mensagem.textContent = "Confira os campos destacados antes de enviar.";
