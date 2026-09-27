@@ -246,11 +246,13 @@ select {
 
 input:focus:invalid,
 select:focus:invalid,
+.campo-invalido,
 .tentou-enviar input:invalid,
 .tentou-enviar select:invalid {
   border-color: #b42318;
 }
 
+.campo-valido,
 .tentou-enviar input:valid,
 .tentou-enviar select:valid {
   border-color: #23724d;

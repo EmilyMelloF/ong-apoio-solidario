@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Início | ONG Apoio Solidário</title>
+  <link rel="icon" href="../imagens/logo.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../css/style.css">
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11" defer></script>
+  <script type="module" src="../js/main.js"></script>
+</head>
+<body>
+  <header>
+    <div class="container cabecalho">
+      <a class="marca" href="#/inicio" data-route="inicio"><img src="../imagens/logo.svg" alt="Apoio Solidário" width="190" height="48"></a>
+      <button class="nav-toggle" type="button" aria-controls="menu-principal" aria-expanded="false" aria-label="Abrir menu"><span aria-hidden="true">☰</span> Menu</button>
+      <nav id="menu-principal" aria-label="Navegação principal">
+        <ul class="menu">
+          <li><a href="#/inicio" data-route="inicio" aria-current="page">Início</a></li>
+          <li class="tem-submenu">
+            <a href="#/projetos" data-route="projetos">Projetos</a>
+            <ul class="submenu" aria-label="Seções de projetos">
+              <li><a href="#/projetos" data-route="projetos" data-secao="frentes">Frentes de atuação</a></li>
+              <li><a href="#/projetos" data-route="projetos" data-secao="doacoes">Campanhas de doação</a></li>
+              <li><a href="#/projetos" data-route="projetos" data-secao="voluntariado">Voluntariado</a></li>
+            </ul>
+          </li>
+          <li><a href="#/cadastro" data-route="cadastro">Cadastro</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="app" class="container"></main>
+
+  <footer>
+    <div class="container rodape-conteudo">
+      <p>ONG Apoio Solidário — projeto acadêmico fictício</p>
+      <p>E-mail: <a href="mailto:contato@apoiosolidario.org">contato@apoiosolidario.org</a> | Telefone: <a href="tel:+5551999999999">(51) 99999-9999</a></p>
+    </div>
+  </footer>
+</body>
+</html>
